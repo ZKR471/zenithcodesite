@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Guide FiveM - ZenithCode</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 20px;
+            }
+            .container { max-width: 900px; margin: 0 auto; }
+            h1 { text-align: center; font-size: 3em; margin-bottom: 40px; }
+            .card {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                padding: 30px;
+                margin-bottom: 20px;
+            }
+            .card h2 { color: #ffd700; margin-bottom: 15px; }
+            .card p { line-height: 1.6; margin-bottom: 10px; }
+            .card ul { margin-left: 20px; }
+            .card li { margin-bottom: 8px; }
+            code {
+                background: rgba(0, 0, 0, 0.3);
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-family: 'Courier New', monospace;
+            }
+            a { color: #ffd700; text-decoration: none; }
+            .btn {
+                display: inline-block;
+                background: #ffd700;
+                color: #333;
+                padding: 15px 30px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>📚 Guide FiveM</h1>
+            
+            <div class="card">
+                <h2>🚀 Installation d'un Script</h2>
+                <p><strong>Étape 1:</strong> Placez le script dans <code>/resources</code></p>
+                <p><strong>Étape 2:</strong> Ajoutez <code>ensure nom_script</code> dans <code>server.cfg</code></p>
+                <p><strong>Étape 3:</strong> Redémarrez le serveur ou tapez <code>refresh</code> puis <code>ensure nom_script</code></p>
+            </div>
+            
+            <div class="card">
+                <h2>⚙️ Auto-Upload FTP</h2>
+                <p>Uploadez automatiquement vos scripts sur votre serveur!</p>
+                <ul>
+                    <li>Configure avec <code>!autoinsert-fivem</code></li>
+                    <li>Entre tes infos FTP</li>
+                    <li>Utilise <code>!esx job de taxi -auto</code></li>
+                    <li>Le script est uploadé automatiquement!</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>📖 Commandes sur Discord</h2>
+                <p>Tape <code>!guide</code> sur Discord pour voir tous les guides:</p>
+                <ul>
+                    <li><code>!guide esx</code> - Guide ESX Legacy</li>
+                    <li><code>!guide qbcore</code> - Guide QB-Core</li>
+                    <li><code>!guide install</code> - Installation de scripts</li>
+                    <li><code>!guide debug</code> - Débugger les erreurs</li>
+                    <li><code>!guide servercfg</code> - Optimiser server.cfg</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="/" class="btn">🏠 Retour Accueil</a>
+            </div>
+        </div>
+    </body>
+    </html>
