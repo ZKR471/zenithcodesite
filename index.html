@@ -1,106 +1,36 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <title>ZenithCode - Bot Multi-Fonction</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            * { margin: 0; padding: 0; box-sizing: border-box; }
-            body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                min-height: 100vh;
-                padding: 20px;
-            }
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-            h1 {
-                text-align: center;
-                font-size: 3em;
-                margin-bottom: 10px;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            }
-            .subtitle {
-                text-align: center;
-                font-size: 1.2em;
-                margin-bottom: 40px;
-                opacity: 0.9;
-            }
-            .card {
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                border-radius: 15px;
-                padding: 30px;
-                margin-bottom: 20px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                border: 1px solid rgba(255, 255, 255, 0.18);
-            }
-            .card h2 {
-                margin-bottom: 20px;
-                font-size: 2em;
-            }
-            .commands {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 15px;
-            }
-            .command {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 15px;
-                border-radius: 10px;
-                border-left: 4px solid #ffd700;
-            }
-            .command h3 {
-                color: #ffd700;
-                margin-bottom: 5px;
-            }
-            .btn {
-                display: inline-block;
-                background: #ffd700;
-                color: #333;
-                padding: 15px 30px;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: bold;
-                margin: 10px;
-                transition: transform 0.3s;
-            }
-            .btn:hover {
-                transform: translateY(-3px);
-            }
-            .stats {
-                display: flex;
-                justify-content: space-around;
-                flex-wrap: wrap;
-                margin-top: 20px;
-            }
-            .stat {
-                text-align: center;
-                padding: 20px;
-            }
-            .stat-number {
-                font-size: 3em;
-                font-weight: bold;
-                color: #ffd700;
-            }
-            .stat-label {
-                font-size: 1.2em;
-                opacity: 0.8;
-            }
-        </style>
-    </head>
-    <body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenithCode - Bot Multi-Fonction Discord</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <h1>🤖 ZenithCode</h1>
-            <p class="subtitle">Bot Multi-Fonction • Roblox + FiveM + Nova Life</p>
-            
-            <div class="card">
-                <h2>📊 Statistiques</h2>
-                <div class="stats">
+            <div class="logo">
+                <h1>🤖 ZenithCode</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="commandes.html">Commandes</a></li>
+                <li><a href="mes-scripts.html">Mes Scripts</a></li>
+                <li><a href="guide.html">Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Bot Multi-Fonction Discord</h1>
+                <p class="hero-subtitle">Génération de code IA pour Roblox, FiveM, Nova Life et plus!</p>
+                <div class="hero-stats">
                     <div class="stat">
-                        <div class="stat-number">30+</div>
+                        <div class="stat-number">32+</div>
                         <div class="stat-label">Commandes</div>
                     </div>
                     <div class="stat">
@@ -112,94 +42,50 @@
                         <div class="stat-label">En ligne</div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="card">
-                <h2>🎮 Commandes Roblox</h2>
-                <div class="commands">
-                    <div class="command">
-                        <h3>!roblox</h3>
-                        <p>Génère du code Roblox Lua</p>
-                    </div>
-                    <div class="command">
-                        <h3>!script</h3>
-                        <p>Crée un script Roblox</p>
-                    </div>
-                    <div class="command">
-                        <h3>!batiment</h3>
-                        <p>Génère un bâtiment 3D</p>
-                    </div>
-                    <div class="command">
-                        <h3>!gui</h3>
-                        <p>Crée une interface graphique</p>
-                    </div>
-                    <div class="command">
-                        <h3>!autoinsert</h3>
-                        <p>Active/désactive auto-insertion</p>
-                    </div>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary">Découvrir</a>
+                    <a href="commandes.html" class="btn btn-secondary">Commandes</a>
                 </div>
             </div>
-            
-            <div class="card">
-                <h2>🚗 Commandes FiveM</h2>
-                <div class="commands">
-                    <div class="command">
-                        <h3>!fivem</h3>
-                        <p>Script FiveM général</p>
-                    </div>
-                    <div class="command">
-                        <h3>!esx</h3>
-                        <p>Script ESX Legacy</p>
-                    </div>
-                    <div class="command">
-                        <h3>!qbcore</h3>
-                        <p>Script QB-Core</p>
-                    </div>
-                    <div class="command">
-                        <h3>!build</h3>
-                        <p>Build/MLO FiveM</p>
-                    </div>
-                    <div class="command">
-                        <h3>!veh</h3>
-                        <p>Spawn véhicule</p>
-                    </div>
-                    <div class="command">
-                        <h3>!ped</h3>
-                        <p>Spawn PED/NPC</p>
-                    </div>
-                    <div class="command">
-                        <h3>!map</h3>
-                        <p>Coordonnées mapping</p>
-                    </div>
-                    <div class="command">
-                        <h3>!cfg</h3>
-                        <p>Server.cfg optimisé</p>
-                    </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Fonctionnalités</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Roblox</h3>
+                    <p>Scripts Lua, bâtiments 3D, interfaces graphiques</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚗</div>
+                    <h3>FiveM</h3>
+                    <p>Scripts ESX, QB-Core, builds, véhicules</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏙️</div>
+                    <h3>Nova Life</h3>
+                    <p>Mods pour Nova Life (Amboise)</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Développement</h3>
+                    <p>Python, Unity C#, Web, Minecraft</p>
                 </div>
             </div>
-            
-            <div class="card">
-                <h2>💻 Autres Commandes</h2>
-                <div class="commands">
-                    <div class="command">
-                        <h3>!novalife</h3>
-                        <p>Mods Nova Life</p>
-                    </div>
-                    <div class="command">
-                        <h3>!python</h3>
-                        <p>Code Python</p>
-                    </div>
-                    <div class="command">
-                        <h3>!unity</h3>
-                        <p>Code C# Unity</p>
-                    </div>
-                    <div class="command">
-                        <h3>!web</h3>
-                        <p>Site web HTML/CSS/JS</p>
-                    </div>
-                    <div class="command">
-                        <h3>!minecraft</h3>
-                        <p>Commandes Minecraft</p>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ZenithCode. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
