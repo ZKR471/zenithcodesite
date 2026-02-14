@@ -1,85 +1,133 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Guide FiveM - ZenithCode</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            * { margin: 0; padding: 0; box-sizing: border-box; }
-            body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 20px;
-            }
-            .container { max-width: 900px; margin: 0 auto; }
-            h1 { text-align: center; font-size: 3em; margin-bottom: 40px; }
-            .card {
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                border-radius: 15px;
-                padding: 30px;
-                margin-bottom: 20px;
-            }
-            .card h2 { color: #ffd700; margin-bottom: 15px; }
-            .card p { line-height: 1.6; margin-bottom: 10px; }
-            .card ul { margin-left: 20px; }
-            .card li { margin-bottom: 8px; }
-            code {
-                background: rgba(0, 0, 0, 0.3);
-                padding: 2px 8px;
-                border-radius: 4px;
-                font-family: 'Courier New', monospace;
-            }
-            a { color: #ffd700; text-decoration: none; }
-            .btn {
-                display: inline-block;
-                background: #ffd700;
-                color: #333;
-                padding: 15px 30px;
-                border-radius: 25px;
-                text-decoration: none;
-                font-weight: bold;
-                margin-top: 20px;
-            }
-        </style>
-    </head>
-    <body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide FiveM - ZenithCode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><h1>🤖 ZenithCode</h1></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="commandes.html">Commandes</a></li>
+                <li><a href="mes-scripts.html">Mes Scripts</a></li>
+                <li><a href="guide.html" class="active">Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
         <div class="container">
             <h1>📚 Guide FiveM</h1>
-            
-            <div class="card">
-                <h2>🚀 Installation d'un Script</h2>
-                <p><strong>Étape 1:</strong> Placez le script dans <code>/resources</code></p>
-                <p><strong>Étape 2:</strong> Ajoutez <code>ensure nom_script</code> dans <code>server.cfg</code></p>
-                <p><strong>Étape 3:</strong> Redémarrez le serveur ou tapez <code>refresh</code> puis <code>ensure nom_script</code></p>
+            <p>Tout pour créer ton serveur</p>
+        </div>
+    </section>
+
+    <section class="guide-content">
+        <div class="container">
+            <div class="guide-section">
+                <h2>📥 Installation d'un Script</h2>
+                <div class="step">
+                    <h3>Étape 1: Placer le script</h3>
+                    <div class="code-block">
+                        <pre>
+# Copie dans resources
+cp -r mon_script /chemin/serveur/resources/
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Étape 2: fxmanifest.lua</h3>
+                    <div class="code-block">
+                        <pre>
+fx_version 'cerulean'
+game 'gta5'
+
+client_scripts {
+    'client.lua'
+}
+
+server_scripts {
+    'server.lua'
+}
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Étape 3: server.cfg</h3>
+                    <div class="code-block">
+                        <pre>
+ensure mon_script
+                        </pre>
+                    </div>
+                </div>
             </div>
-            
-            <div class="card">
-                <h2>⚙️ Auto-Upload FTP</h2>
-                <p>Uploadez automatiquement vos scripts sur votre serveur!</p>
-                <ul>
-                    <li>Configure avec <code>!autoinsert-fivem</code></li>
-                    <li>Entre tes infos FTP</li>
-                    <li>Utilise <code>!esx job de taxi -auto</code></li>
-                    <li>Le script est uploadé automatiquement!</li>
-                </ul>
+
+            <div class="guide-section">
+                <h2>🚀 Auto-Upload FTP</h2>
+                <p>Upload automatique de tes scripts!</p>
+                <div class="info-box">
+                    <h3>Configuration</h3>
+                    <ol>
+                        <li>Tape <code>!autoinsert-fivem</code> sur Discord</li>
+                        <li>Entre tes infos FTP</li>
+                        <li>Utilise <code>-auto</code> dans tes commandes</li>
+                    </ol>
+                </div>
+                <div class="code-block">
+                    <pre>
+!esx job de taxi -auto
+!qbcore garage -auto
+
+✅ Script uploadé automatiquement!
+                    </pre>
+                </div>
             </div>
-            
-            <div class="card">
-                <h2>📖 Commandes sur Discord</h2>
-                <p>Tape <code>!guide</code> sur Discord pour voir tous les guides:</p>
-                <ul>
-                    <li><code>!guide esx</code> - Guide ESX Legacy</li>
-                    <li><code>!guide qbcore</code> - Guide QB-Core</li>
-                    <li><code>!guide install</code> - Installation de scripts</li>
-                    <li><code>!guide debug</code> - Débugger les erreurs</li>
-                    <li><code>!guide servercfg</code> - Optimiser server.cfg</li>
-                </ul>
+
+            <div class="guide-section">
+                <h2>🐛 Débug</h2>
+                <div class="error-item">
+                    <h4>❌ attempt to call a nil value</h4>
+                    <p><strong>Cause:</strong> Fonction inexistante</p>
+                    <p><strong>Solution:</strong> Vérifie que la fonction existe</p>
+                </div>
+                <div class="error-item">
+                    <h4>❌ ESX not found</h4>
+                    <p><strong>Cause:</strong> ESX non chargé</p>
+                    <p><strong>Solution:</strong> Vérifie <code>ensure es_extended</code></p>
+                </div>
             </div>
-            
-            <div style="text-align: center;">
-                <a href="/" class="btn">🏠 Retour Accueil</a>
+
+            <div class="guide-section">
+                <h2>💬 Guides Discord</h2>
+                <div class="discord-commands">
+                    <div class="discord-cmd">
+                        <code>!guide esx</code>
+                        <p>Guide ESX complet</p>
+                    </div>
+                    <div class="discord-cmd">
+                        <code>!guide qbcore</code>
+                        <p>Guide QB-Core</p>
+                    </div>
+                    <div class="discord-cmd">
+                        <code>!guide debug</code>
+                        <p>Débugger les erreurs</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </body>
-    </html>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ZenithCode</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
