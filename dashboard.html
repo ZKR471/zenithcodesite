@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ZenithCode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><h1>🤖 ZenithCode</h1></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="commandes.html">Commandes</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="guide.html">Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard-page">
+        <div class="container">
+            <div class="user-header">
+                <img id="user-avatar" src="" alt="Avatar">
+                <div>
+                    <h1>Bonjour, <span id="user-name"></span>!</h1>
+                    <button onclick="logout()" class="btn-logout">🚪 Déconnexion</button>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div>
+                        <div class="stat-number" id="total-scripts">0</div>
+                        <div class="stat-label">Scripts</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div>
+                        <div class="stat-number" id="today-scripts">0</div>
+                        <div class="stat-label">Aujourd'hui</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filters-bar">
+                <select id="filter-type" onchange="filterScripts()">
+                    <option value="all">Tous</option>
+                    <option value="roblox">Roblox</option>
+                    <option value="fivem">FiveM</option>
+                    <option value="python">Python</option>
+                </select>
+                <input type="text" id="search" placeholder="🔍 Rechercher..." onkeyup="searchScripts()">
+            </div>
+
+            <div id="scripts-grid" class="scripts-grid"></div>
+            <div id="loading" class="loading">Chargement...</div>
+            <div id="empty" class="empty-state" style="display:none;">
+                <h2>📭 Aucun script</h2>
+                <p>Utilise <code>!roblox</code> ou <code>!fivem</code> sur Discord!</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <button onclick="copyCode()" class="btn btn-primary">📋 Copier</button>
+            <button onclick="downloadScript()" class="btn btn-secondary">💾 Télécharger</button>
+            <pre id="modal-code"></pre>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
